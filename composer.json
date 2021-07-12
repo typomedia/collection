@@ -30,7 +30,7 @@
         "test": [
             "vendor/bin/phpcs --standard=PSR1,PSR2,PSR12 --error-severity=1 --warning-severity=8 src",
             "vendor/bin/phpmd src text codesize, controversial, design, naming, unusedcode",
-            "vendor/bin/phpunit --testdox tests"
+            "vendor/bin/phpunit --testdox --coverage-text tests"
         ],
         "fix": [
             "vendor/bin/phpcbf --standard=PSR1,PSR12 src"
