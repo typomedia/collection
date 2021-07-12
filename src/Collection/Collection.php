@@ -18,12 +18,12 @@ class Collection
 
     /**
      * @param $key
-     * @return mixed|null
+     * @return object|null
      */
     public function get($key)
     {
         if ($this->has($key)) {
-            return $this->items[$key];
+            return (object)$this->items[$key];
         }
 
         return null;
