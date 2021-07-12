@@ -114,7 +114,7 @@ class Collection
     protected function arrayKeyFirst($offset = 0)
     {
         // if offset is negative
-        $offset = (integer)abs($offset);
+        $offset = (int)abs($offset);
         // if offset too high
         if ($offset > $this->count()) {
             $offset = $this->count() - 1;
@@ -130,7 +130,7 @@ class Collection
     protected function arrayKeyLast($offset = 0)
     {
         // if offset is negative
-        $offset = (integer)abs($offset);
+        $offset = (int)abs($offset);
         // if offset too high
         if ($offset > $this->count()) {
             $offset = $this->count() - 1;
