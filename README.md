@@ -1,6 +1,6 @@
 # Basic Collection Class
 
-Ease of use collection class.
+Ease of use collection class. 100% Code Coverage in Tests.
 
 The Library is [PSR-1](https://www.php-fig.org/psr/psr-1/), [PSR-4](https://www.php-fig.org/psr/psr-4/), [PSR-12](https://www.php-fig.org/psr/psr-12/) compliant.
 
