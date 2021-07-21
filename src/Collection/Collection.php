@@ -18,28 +18,28 @@ class Collection
 
     /**
      * @param $key
-     * @return object|null
+     * @return object|false
      */
-    public function get($key)
+    public function get($key = null)
     {
         if ($this->has($key)) {
             return (object)$this->items[$key];
         }
 
-        return null;
+        return false;
     }
 
     /**
-     * @param object $object
+     * @param mixed $data
      * @param null $key
      */
-    public function set($object, $key = null)
+    public function set($data, $key = null)
     {
         if ($key === null) {
-            $this->items[] = $object;
+            $this->items[] = $data;
         } else {
             if (!$this->has($key)) {
-                $this->items[$key] = $object;
+                $this->items[$key] = $data;
             }
         }
     }

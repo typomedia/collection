@@ -23,7 +23,7 @@ class CollectionTest extends TestCase
         ];
 
         $collection = new Collection();
-        $collection->set((object)$data);
+        $collection->set($data);
 
         $this->assertIsArray($collection->items);
     }
@@ -44,8 +44,8 @@ class CollectionTest extends TestCase
         ];
 
         $collection = new Collection();
-        $collection->set((object)$data, md5(serialize($data)));
-        $collection->set((object)$data, md5(serialize($data)));
+        $collection->set($data, md5(serialize($data)));
+        $collection->set($data, md5(serialize($data)));
 
         $this->assertEquals(1, $collection->count());
     }
@@ -66,7 +66,7 @@ class CollectionTest extends TestCase
         ];
 
         $collection = new Collection();
-        $collection->set((object)$data);
+        $collection->set($data);
 
         $actual = $collection->get(0);
         $this->assertEquals((object)$data, $actual);
@@ -88,7 +88,7 @@ class CollectionTest extends TestCase
         ];
 
         $collection = new Collection();
-        $collection->set((object)$data);
+        $collection->set($data);
 
         $actual = $collection->get(10);
         $this->assertEquals(null, $actual);
@@ -123,11 +123,11 @@ class CollectionTest extends TestCase
         ];
 
         $collection = new Collection();
-        $collection->set((object)$item1);
-        $collection->set((object)$item2);
+        $collection->set($item1);
+        $collection->set($item2);
 
         $actual = $collection->first();
-        $this->assertEquals((object)$item1, $actual);
+        $this->assertEquals($item1, $actual);
     }
 
     public function testFirstItemWrongOffset()
@@ -159,11 +159,11 @@ class CollectionTest extends TestCase
         ];
 
         $collection = new Collection();
-        $collection->set((object)$item1);
-        $collection->set((object)$item2);
+        $collection->set($item1);
+        $collection->set($item2);
 
         $actual = $collection->first(100);
-        $this->assertEquals((object)$item2, $actual);
+        $this->assertEquals($item2, $actual);
     }
 
     public function testLastItem()
@@ -195,11 +195,11 @@ class CollectionTest extends TestCase
         ];
 
         $collection = new Collection();
-        $collection->set((object)$item1);
-        $collection->set((object)$item2);
+        $collection->set($item1);
+        $collection->set($item2);
 
         $actual = $collection->last();
-        $this->assertEquals((object)$item2, $actual);
+        $this->assertEquals($item2, $actual);
     }
 
     public function testLastItemWrongOffset()
@@ -231,11 +231,11 @@ class CollectionTest extends TestCase
         ];
 
         $collection = new Collection();
-        $collection->set((object)$item1);
-        $collection->set((object)$item2);
+        $collection->set($item1);
+        $collection->set($item2);
 
         $actual = $collection->last(100);
-        $this->assertEquals((object)$item1, $actual);
+        $this->assertEquals($item1, $actual);
     }
 
     public function testCountItems()
@@ -267,8 +267,8 @@ class CollectionTest extends TestCase
         ];
 
         $collection = new Collection();
-        $collection->set((object)$item1);
-        $collection->set((object)$item2);
+        $collection->set($item1);
+        $collection->set($item2);
 
         $actual = $collection->count();
         $this->assertEquals(2, $actual);
@@ -303,8 +303,8 @@ class CollectionTest extends TestCase
         ];
 
         $collection = new Collection();
-        $collection->set((object)$item1);
-        $collection->set((object)$item2);
+        $collection->set($item1);
+        $collection->set($item2);
         $collection->delete(1);
 
         $actual = $collection->count();
@@ -340,8 +340,8 @@ class CollectionTest extends TestCase
         ];
 
         $collection = new Collection();
-        $collection->set((object)$item1);
-        $collection->set((object)$item2);
+        $collection->set($item1);
+        $collection->set($item2);
 
         $actual = $collection->keys();
         $this->assertEquals([0, 1], $actual);
@@ -376,8 +376,8 @@ class CollectionTest extends TestCase
         ];
 
         $collection = new Collection();
-        $collection->set((object)$item1);
-        $collection->set((object)$item2);
+        $collection->set($item1);
+        $collection->set($item2);
 
         $actual = $collection->find('name', 'Rolling Rock');
         $this->assertEquals([1], $actual);
