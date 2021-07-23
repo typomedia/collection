@@ -120,7 +120,9 @@ class Collection
             $offset = $this->count() - 1;
         }
 
-        return $this->items[$offset];
+        $keys = $this->keys();
+        $key = $keys[$offset];
+        return $this->items[$key];
     }
 
     /**
@@ -136,8 +138,9 @@ class Collection
             $offset = $this->count() - 1;
         }
 
-        $offset = $this->count() - (1 + $offset);
-        return $this->items[$offset];
+        $keys = $this->keys();
+        $key = $keys[$this->count() - (1 + $offset)];
+        return $this->items[$key];
     }
 
     /**
