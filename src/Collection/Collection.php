@@ -31,7 +31,7 @@ class Collection
 
     /**
      * @param mixed $data
-     * @param null $key
+     * @param string|null $key
      */
     public function set($data, $key = null)
     {
